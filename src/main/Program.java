@@ -10,6 +10,7 @@ public class Program {
 
 
     public static void main(String[] args) {
+
         while (true) {
             printWelcome();
             printMenu();
@@ -23,18 +24,9 @@ public class Program {
             }
             else if (menuOption == 2) {
                 new ReserveBookCommand().execute();
-
             }
             else if (menuOption == 3) {
-
-                if (loggedIn) {
-                    System.out.println("\n");
-                    System.out.println("Your library number is " + savedLibraryNumber);
-                }
-                else {
-                    System.out.println("\n");
-                    System.out.println("Please talk to Librarian. Thank you.");
-                }
+                new DisplayLibraryNumberCommand(loggedIn,savedLibraryNumber).execute();
             }
             else if (menuOption == 4) {
                 System.out.println(createMovie("Rocky", "John G. Avildsen", "10"));
