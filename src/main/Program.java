@@ -22,21 +22,8 @@ public class Program {
                new PrintBookListCommand().execute();
             }
             else if (menuOption == 2) {
-                System.out.println(" Please enter the number of the book you wish to checkout: ");
-                int selectedBookNumber = getInput(reader);
+                new ReserveBookCommand().execute();
 
-                switch (selectedBookNumber) {
-                    case 1:
-                    case 2:
-                    case 3:
-                    case 4:
-                        System.out.println("\n");
-                        System.out.println(" Thank You! Enjoy the book.");
-                        break;
-                    default:
-                        System.out.println("\n");
-                        System.out.println("Sorry we don't have that book yet.");
-                }
             }
             else if (menuOption == 3) {
 
